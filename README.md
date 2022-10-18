@@ -16,5 +16,7 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 To login:
-1234@hotmail.com
-123456
+User: 1234@hotmail.com
+Password: 123456
+
+DO NOT USE REAL CREDENTIALS TO LOG IN
