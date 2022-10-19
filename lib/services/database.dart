@@ -20,6 +20,15 @@ class DatabaseService {
     });
   }
 
+  Future createFridgeInventory(collection, docid, data) async {
+    await FirebaseFirestore.instance
+        .collection(collection)
+        .doc("doc_Id")
+        .set(data);
+
+    // simply add a document in messages sub-collection when needed.
+  }
+
   // brew list from snapshot
   List<Brew> _brewListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.docs.map((doc) {

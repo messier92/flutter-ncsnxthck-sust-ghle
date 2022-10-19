@@ -5,3 +5,18 @@ class Brew {
 
   Brew({this.name, this.sugars, this.strength});
 }
+
+class FridgeInventory {
+  final String product;
+  final String? belongsTo;
+  final DateTime dateOfPlacement;
+  final DateTime? updatedAt;
+  final DateTime dateOfExpiry;
+
+  FridgeInventory(
+      {required this.product,
+      this.belongsTo,
+      required this.dateOfPlacement,
+      this.updatedAt,
+      required this.dateOfExpiry});
+}

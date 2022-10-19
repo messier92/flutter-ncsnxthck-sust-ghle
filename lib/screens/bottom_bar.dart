@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/authenticate/authenticate.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/screens/home/fridge_page.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/home/home.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/wrapper.dart';
 
@@ -15,8 +16,8 @@ class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
     // home or login screen
+    FridgePage(),
     Home(),
-    Text("Placeholder Voting Page"),
     Text("Placeholder Info Page"),
     Authenticate(),
   ];
