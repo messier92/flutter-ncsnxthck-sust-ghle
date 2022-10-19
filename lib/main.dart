@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/screens/bottom_bar.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/services/auth.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       value: AuthService().user,
       initialData: null,
       child: MaterialApp(
-        home: Wrapper(),
+        home: BottomBar(),
       ),
     );
   }
