@@ -28,10 +28,10 @@ class Home extends StatelessWidget {
       value: DatabaseService().brews,
       initialData: [],
       child: Scaffold(
-        backgroundColor: Colors.brown[50],
+        backgroundColor: Colors.indigo[50],
         appBar: AppBar(
             title: Text('MunchPouch'),
-            backgroundColor: Colors.brown[400],
+            backgroundColor: Colors.indigo[400],
             elevation: 0.0,
             actions: <Widget>[
               TextButton.icon(

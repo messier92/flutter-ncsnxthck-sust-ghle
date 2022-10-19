@@ -32,9 +32,9 @@ class _SignInState extends State<SignIn> {
     return loading
         ? const Loading()
         : Scaffold(
-            backgroundColor: Colors.brown[100],
+            backgroundColor: Colors.indigo[100],
             appBar: AppBar(
-                backgroundColor: Colors.brown[400],
+                backgroundColor: Colors.indigo[400],
                 elevation: 0.0,
                 title: Text('Sign in to MunchPouch'),
                 actions: <Widget>[
@@ -92,6 +92,21 @@ class _SignInState extends State<SignIn> {
                           }
                         },
                       ),
+                      SizedBox(height: 20.0),
+                      ElevatedButton(
+                          style: signInStyle,
+                          child: Text(
+                            'Sign In Anonymously',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          onPressed: () async {
+                            dynamic result = await _auth.signInAnon();
+                            if (result == null) {
+                              setState(() => error =
+                                  'Unable to sign in with those credentials');
+                              loading = false;
+                            }
+                          }),
                       SizedBox(height: 12.0),
                       Text(error,
                           style: TextStyle(color: Colors.red, fontSize: 14.0)),

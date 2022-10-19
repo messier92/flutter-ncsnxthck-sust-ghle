@@ -30,9 +30,9 @@ class _RegisterState extends State<Register> {
     return loading
         ? const Loading()
         : Scaffold(
-            backgroundColor: Colors.brown[100],
+            backgroundColor: Colors.indigo[100],
             appBar: AppBar(
-                backgroundColor: Colors.brown[400],
+                backgroundColor: Colors.indigo[400],
                 elevation: 0.0,
                 title: Text('Sign in to MunchPouch'),
                 actions: <Widget>[
@@ -42,7 +42,7 @@ class _RegisterState extends State<Register> {
                     onPressed: () {
                       widget.toggleView();
                     },
-                  )
+                  ),
                 ]),
             body: Container(
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
