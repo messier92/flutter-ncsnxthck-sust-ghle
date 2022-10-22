@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/bottom_bar.dart';
-import 'package:flutter_ncsnxthck_sust_ghle/screens/wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/services/auth.dart';
 import 'package:provider/provider.dart';

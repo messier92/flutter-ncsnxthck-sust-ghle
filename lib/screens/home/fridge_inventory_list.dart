@@ -36,7 +36,7 @@ class _FridgeListState extends State<FridgeInventoryList> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text("Placed by: John"),
+                            Text("Placed by: Eugene"),
                             SizedBox(width: 10),
                             Text(
                               "Date of Placement: 13/10/2022",
@@ -76,7 +76,7 @@ class _FridgeListState extends State<FridgeInventoryList> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text("Placed by: Mary"),
+                            Text("Placed by: Anwar"),
                             SizedBox(width: 10),
                             Text(
                               "Date of Placement: 15/10/2022",
@@ -116,7 +116,7 @@ class _FridgeListState extends State<FridgeInventoryList> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text("Placed by: Sue"),
+                            Text("Placed by: Kevin"),
                             SizedBox(width: 10),
                             Text(
                               "Date of Placement: 22/10/2022",
