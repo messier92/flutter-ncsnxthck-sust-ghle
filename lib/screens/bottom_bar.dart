@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/authenticate/authenticate.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/home/fridge_page.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/home/home.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/screens/home/search_page.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/wrapper.dart';
 
 class BottomBar extends StatefulWidget {
@@ -17,8 +18,8 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetOptions = <Widget>[
     // home or login screen
     FridgePage(),
+    SearchPage(),
     Home(),
-    Text("Placeholder Info Page"),
     Authenticate(),
   ];
 

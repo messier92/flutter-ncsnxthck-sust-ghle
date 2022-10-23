@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/models/user.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/services/database.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/shared/constants.dart';
-import 'package:flutter_ncsnxthck_sust_ghle/shared/loading.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/shared/widgets/loading.dart';
 import 'package:provider/provider.dart';
 
 class SettingsForm extends StatefulWidget {

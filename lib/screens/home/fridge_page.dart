@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/screens/home/add_items_form.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/home/brew_list.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/home/fridge_inventory_list.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/home/settings_form.dart';
@@ -20,7 +21,7 @@ class FridgePage extends StatelessWidget {
           builder: (context) {
             return Container(
               padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
-              child: SettingsForm(),
+              child: AddItemsForm(),
             );
           });
     }

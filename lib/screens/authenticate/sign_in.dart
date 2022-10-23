@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/services/auth.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/shared/constants.dart';
-import 'package:flutter_ncsnxthck_sust_ghle/shared/loading.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/shared/widgets/loading.dart';
 
 // RaisedButton replaced by ElevatedButton
 class SignIn extends StatefulWidget {
