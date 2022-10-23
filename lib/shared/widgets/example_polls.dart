@@ -4,69 +4,45 @@ import 'package:flutter_polls/flutter_polls.dart';
 List polls() => [
       {
         'id': 1,
-        'question':
-            'Is Flutter the best framework for building cross-platform applications?',
+        'question': 'What kind of snacks do you eat regularly?',
         'end_date': DateTime(2022, 5, 21),
         'options': [
           {
             'id': 1,
-            'title': 'Absolutely',
+            'title': 'Biscuits & cookies',
             'votes': 40,
           },
           {
             'id': 2,
-            'title': 'Maybe',
+            'title': 'Fruits & nuts',
             'votes': 20,
           },
           {
             'id': 3,
-            'title': 'Meh!',
+            'title': 'Chips & crisps',
             'votes': 10,
           },
         ],
       },
       {
         'id': 2,
-        'question': 'Do you think Oranguntans have the ability speak?',
+        'question': 'Would you subscribe to a monthly snack pack?',
         'end_date': DateTime(2022, 12, 25),
         'options': [
           {
             'id': 1,
-            'title': 'Yes, they definitely do',
+            'title': 'Yes, definitely',
             'votes': 40,
           },
           {
             'id': 2,
-            'title': 'No, they do not',
+            'title': 'No, I do not think so',
             'votes': 0,
           },
           {
             'id': 3,
-            'title': 'I do not know',
+            'title': 'I do not have a preference',
             'votes': 10,
-          },
-          {
-            'id': 4,
-            'title': 'Why should I care?',
-            'votes': 30,
-          }
-        ],
-      },
-      {
-        'id': 3,
-        'question':
-            'How do you know that your experience of consciousness is the same as other people’s experience of consciousness?',
-        'end_date': DateTime(2022, 04, 30),
-        'options': [
-          {
-            'id': 2,
-            'title': 'It is certain that they do',
-            'votes': 0,
-          },
-          {
-            'id': 3,
-            'title': 'How am I supposed to know?',
-            'votes': 0,
           },
         ],
       },
@@ -84,8 +60,7 @@ class _ExamplePollsState extends State<ExamplePolls> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 100,
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(5),
         child: ListView.builder(
           itemCount: polls().length,
           itemBuilder: (BuildContext context, int index) {
@@ -104,7 +79,7 @@ class _ExamplePollsState extends State<ExamplePolls> {
                 .inDays;
 
             return Container(
-              margin: const EdgeInsets.only(bottom: 20),
+              margin: const EdgeInsets.only(bottom: 5),
               child: FlutterPolls(
                 pollId: poll['id'].toString(),
                 // hasVoted: hasVoted.value,
@@ -145,7 +120,7 @@ class _ExamplePollsState extends State<ExamplePolls> {
                   ),
                 ),
                 votedPercentageTextStyle: const TextStyle(
-                  fontSize: 14,
+                  fontSize: 7,
                   fontWeight: FontWeight.w600,
                 ),
                 metaWidget: Row(

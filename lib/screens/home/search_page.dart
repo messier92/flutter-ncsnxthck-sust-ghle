@@ -6,7 +6,6 @@ import 'package:flutter_ncsnxthck_sust_ghle/screens/home/settings_form.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/search_screen.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/services/auth.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/services/database.dart';
-import 'package:flutter_ncsnxthck_sust_ghle/shared/widgets/example_polls.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/models/brew.dart';
 
@@ -27,7 +26,7 @@ class SearchPage extends StatelessWidget {
           backgroundColor: Colors.indigo[400],
           elevation: 0.0,
         ),
-        body: ExamplePolls(),
+        body: SearchScreen(),
       ),
     );
   }

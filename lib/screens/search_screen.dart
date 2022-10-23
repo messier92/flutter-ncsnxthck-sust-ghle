@@ -98,8 +98,8 @@ class SearchScreen extends StatelessWidget {
                       vertical: AppLayout.getWidth(15)),
                   decoration: BoxDecoration(
                       borderRadius:
-                          BorderRadius.circular(AppLayout.getHeight(20)),
-                      color: Colors.white,
+                          BorderRadius.circular(AppLayout.getHeight(12)),
+                      color: Color(0xFFEC6545),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.shade200,
@@ -108,17 +108,31 @@ class SearchScreen extends StatelessWidget {
                         )
                       ]),
                   child: Column(children: [
-                    Container(
-                      height: AppLayout.getHeight(160),
-                      decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(AppLayout.getHeight(12)),
-                      ),
-                    ),
-                    Gap(AppLayout.getHeight(12)),
                     Text(
-                      "20% discount off monthly subscription for ABC's potato chips. Subscribe now!",
-                    )
+                      "Vote for your favourite snacks!",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    Gap(AppLayout.getHeight(5)),
+                    RichText(
+                        text: const TextSpan(children: [
+                      TextSpan(
+                        text: '😋',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      TextSpan(
+                        text: '😝',
+                        style: TextStyle(fontSize: 25),
+                      ),
+                      TextSpan(
+                        text: '😆',
+                        style: TextStyle(fontSize: 20),
+                      )
+                    ])),
+                    Expanded(child: ExamplePolls()),
                   ])),
               Column(
                 children: [
@@ -138,18 +152,18 @@ class SearchScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Discount for survey",
+                              "Take a survey, get a discount",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),
                             Gap(AppLayout.getHeight(10)),
-                            Text(
-                              "Take the survey now",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,
-                                  fontSize: 19),
+                            ElevatedButton(
+                              onPressed: () {},
+                              child: Text(
+                                'Take the survey now',
+                                style: TextStyle(color: Colors.blue[300]),
+                              ),
                             )
                           ],
                         ),
@@ -180,7 +194,7 @@ class SearchScreen extends StatelessWidget {
                           color: const Color(0xFFEC6545)),
                       child: Column(children: [
                         Text(
-                          "Vote for your favourite snacks!",
+                          "Upcoming snacks",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -188,21 +202,6 @@ class SearchScreen extends StatelessWidget {
                           textAlign: TextAlign.center,
                         ),
                         Gap(AppLayout.getHeight(5)),
-                        RichText(
-                            text: const TextSpan(children: [
-                          TextSpan(
-                            text: '😋',
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          TextSpan(
-                            text: '😝',
-                            style: TextStyle(fontSize: 25),
-                          ),
-                          TextSpan(
-                            text: '😆',
-                            style: TextStyle(fontSize: 20),
-                          )
-                        ]))
                       ])),
                 ],
               ),
