@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/shared/app_info_list.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/shared/utils.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/shared/widgets/example_polls.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/shared/widgets/snacks_view.dart';
 import 'package:gap/gap.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -10,6 +12,10 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
+    final ButtonStyle takeSurveyStyle = ElevatedButton.styleFrom(
+        textStyle: const TextStyle(fontSize: 10, color: Colors.white),
+        backgroundColor: Colors.blue[400]);
+
     return Scaffold(
         backgroundColor: Colors.indigo[100],
         body: ListView(
@@ -135,20 +141,21 @@ class SearchScreen extends StatelessWidget {
                     Expanded(child: ExamplePolls()),
                   ])),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Stack(
                     children: [
                       Container(
                         width: size.width * 0.32,
-                        height: AppLayout.getHeight(200),
+                        height: AppLayout.getHeight(50),
                         decoration: BoxDecoration(
                             color: Color(0xFF3AB8B8),
                             borderRadius:
-                                BorderRadius.circular(AppLayout.getHeight(15))),
+                                BorderRadius.circular(AppLayout.getHeight(8))),
                         padding: EdgeInsets.symmetric(
-                            vertical: AppLayout.getHeight(12),
-                            horizontal: AppLayout.getWidth(12)),
-                        child: Column(
+                            vertical: AppLayout.getHeight(6),
+                            horizontal: AppLayout.getWidth(6)),
+                        child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -157,14 +164,14 @@ class SearchScreen extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),
-                            Gap(AppLayout.getHeight(10)),
+                            Gap(AppLayout.getWidth(10)),
                             ElevatedButton(
-                              onPressed: () {},
-                              child: Text(
-                                'Take the survey now',
-                                style: TextStyle(color: Colors.blue[300]),
-                              ),
-                            )
+                                style: takeSurveyStyle,
+                                child: Text('Take survey now',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    )),
+                                onPressed: () async {})
                           ],
                         ),
                       ),
@@ -194,7 +201,7 @@ class SearchScreen extends StatelessWidget {
                           color: const Color(0xFFEC6545)),
                       child: Column(children: [
                         Text(
-                          "Upcoming snacks",
+                          "Trending snacks",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -202,6 +209,16 @@ class SearchScreen extends StatelessWidget {
                           textAlign: TextAlign.center,
                         ),
                         Gap(AppLayout.getHeight(5)),
+                        Expanded(
+                          child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Row(
+                                  children: snackList
+                                      .map((singleSnack) =>
+                                          SnackView(snack: singleSnack))
+                                      .toList())),
+                        ),
                       ])),
                 ],
               ),
