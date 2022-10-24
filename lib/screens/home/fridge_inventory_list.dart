@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/models/brew.dart';
-import '../home/brew_tile.dart';
 
 class FridgeInventoryList extends StatefulWidget {
   const FridgeInventoryList({super.key});

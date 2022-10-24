@@ -34,7 +34,7 @@ class _RegisterState extends State<Register> {
             appBar: AppBar(
                 backgroundColor: Colors.indigo[400],
                 elevation: 0.0,
-                title: Text('Sign in to MunchPouch'),
+                title: Text('MunchPouch'),
                 actions: <Widget>[
                   TextButton.icon(
                     icon: Icon(Icons.person),
