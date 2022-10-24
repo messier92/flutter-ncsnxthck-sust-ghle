@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ncsnxthck_sust_ghle/screens/search_screen.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/screens/order_screen.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/services/auth.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/services/database.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/models/brew.dart';
 
-class SearchPage extends StatelessWidget {
-  SearchPage({super.key});
+class OrderPage extends StatelessWidget {
+  OrderPage({super.key});
 
   final AuthService _auth = AuthService();
 
@@ -22,7 +22,7 @@ class SearchPage extends StatelessWidget {
           backgroundColor: Colors.indigo[400],
           elevation: 0.0,
         ),
-        body: SearchScreen(),
+        body: OrderScreen(),
       ),
     );
   }

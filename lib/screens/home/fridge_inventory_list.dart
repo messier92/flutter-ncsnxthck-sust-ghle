@@ -38,8 +38,10 @@ class _FridgeListState extends State<FridgeInventoryList> {
                           children: [
                             Text("Placed by: Eugene"),
                             SizedBox(width: 10),
+                            Text("Location: Home Fridge"),
+                            SizedBox(width: 10),
                             Text(
-                              "Date of Placement: 13/10/2022",
+                              "Placed On: 13/10/2022",
                             ),
                             SizedBox(width: 10),
                             Text("Date of Expiry: 22/10/2022"),
@@ -78,8 +80,94 @@ class _FridgeListState extends State<FridgeInventoryList> {
                           children: [
                             Text("Placed by: Anwar"),
                             SizedBox(width: 10),
+                            Text("Location: Fridge #1516, Blk A3"),
+                            SizedBox(width: 10),
                             Text(
-                              "Date of Placement: 15/10/2022",
+                              "Placed On: 15/10/2022",
+                            ),
+                            SizedBox(width: 10),
+                            Text("Date of Expiry: 20/10/2022"),
+                            SizedBox(width: 10),
+                            Text("Item expires in 5 days",
+                                style: TextStyle(color: Colors.red[800]))
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                visualDensity: VisualDensity.compact,
+                dense: true,
+                trailing: Icon(Icons.more_vert),
+              ),
+            ),
+            Card(
+              margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
+              child: ListTile(
+                leading: CircleAvatar(
+                  radius: 20,
+                  backgroundImage: AssetImage("images/chocolatecake.jpg"),
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                  ),
+                ),
+                title: Text('Chocolate cake'),
+                subtitle: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text("Placed by: Anwar"),
+                            SizedBox(width: 10),
+                            Text("Location: Fridge #1516, Blk A3"),
+                            SizedBox(width: 10),
+                            Text(
+                              "Placed On: 15/10/2022",
+                            ),
+                            SizedBox(width: 10),
+                            Text("Date of Expiry: 20/10/2022"),
+                            SizedBox(width: 10),
+                            Text("Item expires in 5 days",
+                                style: TextStyle(color: Colors.red[800]))
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                visualDensity: VisualDensity.compact,
+                dense: true,
+                trailing: Icon(Icons.more_vert),
+              ),
+            ),
+            Card(
+              margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
+              child: ListTile(
+                leading: CircleAvatar(
+                  radius: 20,
+                  backgroundImage: AssetImage("images/chocolatecake.jpg"),
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                  ),
+                ),
+                title: Text('Chocolate cake'),
+                subtitle: Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text("Placed by: Anwar"),
+                            SizedBox(width: 10),
+                            Text("Location: Fridge #1516, Blk A3"),
+                            SizedBox(width: 10),
+                            Text(
+                              "Placed On: 15/10/2022",
                             ),
                             SizedBox(width: 10),
                             Text("Date of Expiry: 20/10/2022"),
@@ -118,8 +206,10 @@ class _FridgeListState extends State<FridgeInventoryList> {
                           children: [
                             Text("Placed by: Kevin"),
                             SizedBox(width: 10),
+                            Text("Location: Pantry, C7"),
+                            SizedBox(width: 10),
                             Text(
-                              "Date of Placement: 22/10/2022",
+                              "Placed On: 22/10/2022",
                             ),
                             SizedBox(width: 10),
                             Text("Date of Expiry: 30/10/2023"),

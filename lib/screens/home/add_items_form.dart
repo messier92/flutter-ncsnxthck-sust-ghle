@@ -29,6 +29,7 @@ class _AddItemsFormState extends State<AddItemsForm> {
   File? image;
   String? _nameofProduct;
   String? _nameofUser;
+  String? _storageLocation;
 
   Future pickImage(ImageSource source) async {
     try {
@@ -42,17 +43,18 @@ class _AddItemsFormState extends State<AddItemsForm> {
     }
   }
 
-  DateTime selectedDate = DateTime.now();
+  DateTime selectedDateofExpiry = DateTime.now();
+  DateTime selectedDateofPlacement = DateTime.now();
 
   Future<void> _selectDateofPlacement(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
         context: context,
-        initialDate: selectedDate,
+        initialDate: selectedDateofPlacement,
         firstDate: DateTime(2015, 8),
         lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDate) {
+    if (picked != null && picked != selectedDateofPlacement) {
       setState(() {
-        selectedDate = picked;
+        selectedDateofPlacement = picked;
       });
     }
   }
@@ -60,12 +62,12 @@ class _AddItemsFormState extends State<AddItemsForm> {
   Future<void> _selectDateofExpiry(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
         context: context,
-        initialDate: selectedDate,
+        initialDate: selectedDateofExpiry,
         firstDate: DateTime(2015, 8),
         lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDate) {
+    if (picked != null && picked != selectedDateofExpiry) {
       setState(() {
-        selectedDate = picked;
+        selectedDateofExpiry = picked;
       });
     }
   }
@@ -76,7 +78,7 @@ class _AddItemsFormState extends State<AddItemsForm> {
       key: _formKey,
       child: Column(children: <Widget>[
         const Text(
-          'Add a new item to this fridge',
+          'Add a new item',
           style: TextStyle(fontSize: 18.0),
         ),
         const SizedBox(height: 20.0),
@@ -122,7 +124,7 @@ class _AddItemsFormState extends State<AddItemsForm> {
               val!.isEmpty ? 'Please enter the name of this product' : null,
           onChanged: (val) => setState(() => _nameofProduct = val),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 5),
         // dropdown
         TextFormField(
           decoration: textInputDecoration.copyWith(hintText: 'Name of owner'),
@@ -130,15 +132,23 @@ class _AddItemsFormState extends State<AddItemsForm> {
               val!.isEmpty ? 'Please enter a name of the owner' : null,
           onChanged: (val) => setState(() => _nameofUser = val),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 5),
+        TextFormField(
+          decoration:
+              textInputDecoration.copyWith(hintText: 'Storage location'),
+          validator: (val) =>
+              val!.isEmpty ? 'Please enter the storage location' : null,
+          onChanged: (val) => setState(() => _storageLocation = val),
+        ),
+        SizedBox(height: 10),
         Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text("Date of placement:"),
+              Text("Placed On:"),
               Spacer(),
-              Text("${selectedDate.toLocal()}".split(' ')[0]),
+              Text("${selectedDateofPlacement.toLocal()}".split(' ')[0]),
               SizedBox(
                 width: 20.0,
               ),
@@ -149,7 +159,7 @@ class _AddItemsFormState extends State<AddItemsForm> {
             ],
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -157,7 +167,7 @@ class _AddItemsFormState extends State<AddItemsForm> {
             children: <Widget>[
               Text("Date of expiry:"),
               Spacer(),
-              Text("${selectedDate.toLocal()}".split(' ')[0]),
+              Text("${selectedDateofExpiry.toLocal()}".split(' ')[0]),
               SizedBox(
                 width: 20.0,
               ),
@@ -168,7 +178,7 @@ class _AddItemsFormState extends State<AddItemsForm> {
             ],
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         ElevatedButton(
             style: signInStyle,
             child: Text('Add',

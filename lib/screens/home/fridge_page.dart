@@ -37,11 +37,6 @@ class FridgePage extends StatelessWidget {
             elevation: 0.0,
             actions: <Widget>[
               TextButton.icon(
-                  icon: Icon(Icons.person),
-                  label: Text('Fridge ID #1002'),
-                  onPressed: () async {}),
-              // flatbutton
-              TextButton.icon(
                 icon: Icon(Icons.settings),
                 label: Text('Add items'),
                 onPressed: () => _showSettingsPanel(),

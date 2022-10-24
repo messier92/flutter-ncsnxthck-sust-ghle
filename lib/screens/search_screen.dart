@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/shared/app_info_list.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/shared/utils.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/shared/widgets/example_polls.dart';
@@ -14,7 +13,7 @@ class SearchScreen extends StatelessWidget {
     final size = AppLayout.getSize(context);
     final ButtonStyle takeSurveyStyle = ElevatedButton.styleFrom(
         textStyle: const TextStyle(fontSize: 10, color: Colors.white),
-        backgroundColor: Colors.blue[400]);
+        backgroundColor: Color(0xD91130CE));
 
     return Scaffold(
         backgroundColor: Colors.indigo[100],
@@ -49,40 +48,34 @@ class SearchScreen extends StatelessWidget {
                 Container(
                     height: 45,
                     width: 120,
-                    padding: EdgeInsets.symmetric(
-                        vertical: AppLayout.getWidth(15),
-                        horizontal: AppLayout.getWidth(15)),
                     decoration: BoxDecoration(
-                      color: Color(0xD91130CE),
                       borderRadius:
                           BorderRadius.circular(AppLayout.getWidth(10)),
                     ),
-                    child: Center(
-                        child: Text(
-                      "Find",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ))),
+                    child: ElevatedButton(
+                        style: takeSurveyStyle,
+                        child: Text('Find',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                            )),
+                        onPressed: () async {})),
                 SizedBox(width: 50),
                 Container(
                     height: 45,
                     width: 120,
-                    padding: EdgeInsets.symmetric(
-                        vertical: AppLayout.getWidth(15),
-                        horizontal: AppLayout.getWidth(15)),
                     decoration: BoxDecoration(
-                      color: Color(0xD91130CE),
                       borderRadius:
                           BorderRadius.circular(AppLayout.getWidth(10)),
                     ),
-                    child: Center(
-                        child: Text(
-                      "Recommend",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ))),
+                    child: ElevatedButton(
+                        style: takeSurveyStyle,
+                        child: Text('Recommend',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                            )),
+                        onPressed: () async {})),
               ],
             ),
             Gap(AppLayout.getHeight(40)),
@@ -98,7 +91,7 @@ class SearchScreen extends StatelessWidget {
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Container(
                   height: AppLayout.getHeight(370),
-                  width: size.width * 0.5,
+                  width: size.width * 0.45,
                   padding: EdgeInsets.symmetric(
                       horizontal: AppLayout.getHeight(15),
                       vertical: AppLayout.getWidth(15)),
@@ -139,69 +132,47 @@ class SearchScreen extends StatelessWidget {
                       )
                     ])),
                     Expanded(child: ExamplePolls()),
+                    Gap(5),
+                    Row(
+                      children: [
+                        Text(
+                          "Take a survey, get a discount",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.white),
+                        ),
+                        Spacer(),
+                        ElevatedButton(
+                            style: takeSurveyStyle,
+                            child: Text('Take survey now',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                )),
+                            onPressed: () async {}),
+                      ],
+                    )
                   ])),
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Stack(
-                    children: [
-                      Container(
-                        width: size.width * 0.32,
-                        height: AppLayout.getHeight(50),
-                        decoration: BoxDecoration(
-                            color: Color(0xFF3AB8B8),
-                            borderRadius:
-                                BorderRadius.circular(AppLayout.getHeight(8))),
-                        padding: EdgeInsets.symmetric(
-                            vertical: AppLayout.getHeight(6),
-                            horizontal: AppLayout.getWidth(6)),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Take a survey, get a discount",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ),
-                            Gap(AppLayout.getWidth(10)),
-                            ElevatedButton(
-                                style: takeSurveyStyle,
-                                child: Text('Take survey now',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    )),
-                                onPressed: () async {})
-                          ],
-                        ),
-                      ),
-                      Positioned(
-                        right: -45,
-                        top: -40,
-                        child: Container(
-                            padding: EdgeInsets.all(AppLayout.getHeight(28)),
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                    width: 8, color: Color(0xFF189999)),
-                                color: Colors.transparent)),
-                      ),
-                    ],
-                  ),
-                  Gap(AppLayout.getHeight(5)),
                   Container(
-                      width: size.width * 0.33,
-                      height: AppLayout.getHeight(165),
+                      height: AppLayout.getHeight(370),
+                      width: size.width * 0.45,
                       padding: EdgeInsets.symmetric(
-                          vertical: AppLayout.getHeight(12),
-                          horizontal: AppLayout.getWidth(12)),
+                          horizontal: AppLayout.getHeight(15),
+                          vertical: AppLayout.getWidth(15)),
                       decoration: BoxDecoration(
                           borderRadius:
                               BorderRadius.circular(AppLayout.getHeight(12)),
-                          color: const Color(0xFFEC6545)),
+                          color: Color(0xFFEC6545),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade200,
+                              blurRadius: 1,
+                              spreadRadius: 1,
+                            )
+                          ]),
                       child: Column(children: [
                         Text(
-                          "Trending snacks",
+                          "Trending snacks this month",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -211,9 +182,8 @@ class SearchScreen extends StatelessWidget {
                         Gap(AppLayout.getHeight(5)),
                         Expanded(
                           child: SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              padding: const EdgeInsets.only(left: 10),
-                              child: Row(
+                              scrollDirection: Axis.vertical,
+                              child: Column(
                                   children: snackList
                                       .map((singleSnack) =>
                                           SnackView(snack: singleSnack))

@@ -2,9 +2,8 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/authenticate/authenticate.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/home/fridge_page.dart';
-import 'package:flutter_ncsnxthck_sust_ghle/screens/home/home.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/screens/home/order_page.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/home/search_page.dart';
-import 'package:flutter_ncsnxthck_sust_ghle/screens/wrapper.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class _BottomBarState extends State<BottomBar> {
     // home or login screen
     FridgePage(),
     SearchPage(),
-    Home(),
+    OrderPage(),
     Authenticate(),
   ];
 
@@ -53,9 +52,9 @@ class _BottomBarState extends State<BottomBar> {
               activeIcon: Icon(FluentSystemIcons.ic_fluent_favorites_filled),
               label: "Vote"),
           BottomNavigationBarItem(
-              icon: Icon(FluentSystemIcons.ic_fluent_info_regular),
-              activeIcon: Icon(FluentSystemIcons.ic_fluent_info_filled),
-              label: "Information"),
+              icon: Icon(FluentSystemIcons.ic_fluent_payment_regular),
+              activeIcon: Icon(FluentSystemIcons.ic_fluent_payment_filled),
+              label: "Receipts"),
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_person_regular),
               activeIcon: Icon(FluentSystemIcons.ic_fluent_person_filled),
