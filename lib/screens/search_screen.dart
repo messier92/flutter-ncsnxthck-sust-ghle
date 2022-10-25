@@ -4,6 +4,7 @@ import 'package:flutter_ncsnxthck_sust_ghle/shared/utils.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/shared/widgets/example_polls.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/shared/widgets/snacks_view.dart';
 import 'package:gap/gap.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/shared/constants.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -11,20 +12,17 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
-    final ButtonStyle takeSurveyStyle = ElevatedButton.styleFrom(
-        textStyle: const TextStyle(fontSize: 10, color: Colors.white),
-        backgroundColor: Color(0xD91130CE));
 
     return Scaffold(
         backgroundColor: Colors.indigo[100],
         body: ListView(
           padding: EdgeInsets.symmetric(
-              horizontal: AppLayout.getWidth(20),
-              vertical: AppLayout.getHeight(20)),
+              horizontal: AppLayout.getWidth(10),
+              vertical: AppLayout.getHeight(10)),
           children: [
-            Gap(AppLayout.getHeight(40)),
+            Gap(AppLayout.getHeight(10)),
             Text("What are you craving for?", style: TextStyle(fontSize: 35)),
-            Gap(AppLayout.getHeight(20)),
+            Gap(AppLayout.getHeight(10)),
             Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -88,10 +86,11 @@ class SearchScreen extends StatelessWidget {
               )
             ]),
             Gap(AppLayout.getHeight(15)),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+
+            Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
               Container(
                   height: AppLayout.getHeight(370),
-                  width: size.width * 0.45,
+                  width: size.width * 0.95,
                   padding: EdgeInsets.symmetric(
                       horizontal: AppLayout.getHeight(15),
                       vertical: AppLayout.getWidth(15)),
@@ -155,7 +154,7 @@ class SearchScreen extends StatelessWidget {
                 children: [
                   Container(
                       height: AppLayout.getHeight(370),
-                      width: size.width * 0.45,
+                      width: size.width * 0.95,
                       padding: EdgeInsets.symmetric(
                           horizontal: AppLayout.getHeight(15),
                           vertical: AppLayout.getWidth(15)),

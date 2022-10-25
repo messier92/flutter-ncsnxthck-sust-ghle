@@ -8,3 +8,14 @@ const textInputDecoration = InputDecoration(
     focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(color: Colors.pink, width: 2.0),
     ));
+
+final ButtonStyle signInStyle = ElevatedButton.styleFrom(
+    textStyle: const TextStyle(fontSize: 20, color: Colors.white),
+    backgroundColor: Colors.pink[400]);
+
+final ButtonStyle takeSurveyStyle = ElevatedButton.styleFrom(
+    textStyle: const TextStyle(fontSize: 10, color: Colors.white),
+    backgroundColor: Color(0xD91130CE));
+
+final ButtonStyle qrLinkStyle = ElevatedButton.styleFrom(
+    textStyle: const TextStyle(fontSize: 10, color: Colors.white));

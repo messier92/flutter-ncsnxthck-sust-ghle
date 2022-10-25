@@ -16,9 +16,10 @@ class FridgePage extends StatelessWidget {
     void _showSettingsPanel() {
       showModalBottomSheet(
           context: context,
+          isScrollControlled:true,
           builder: (context) {
             return Container(
-              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
+              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
               child: AddItemsForm(),
             );
           });

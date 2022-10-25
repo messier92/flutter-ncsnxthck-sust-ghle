@@ -1,9 +1,9 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/screens/authenticate/authenticate.dart';
-import 'package:flutter_ncsnxthck_sust_ghle/screens/home/fridge_page.dart';
-import 'package:flutter_ncsnxthck_sust_ghle/screens/home/order_page.dart';
-import 'package:flutter_ncsnxthck_sust_ghle/screens/home/search_page.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/screens/home/pages/fridge_page.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/screens/home/pages/order_page.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/screens/home/pages/search_page.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);

@@ -21,18 +21,26 @@ class _FridgeListState extends State<FridgeInventoryList> {
               child: ListTile(
                 leading: CircleAvatar(
                   radius: 20,
-                  backgroundImage: AssetImage("images/bananas.jpg"),
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                  ),
+                  backgroundImage: AssetImage("assets/images/bananas.jpg"),
                 ),
-                title: Text('Bananas'),
+                title: Column(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text('Bananas'),
+                      ],
+                    ),
+                  ],
+                ),
                 subtitle: Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 5),
                   child: Container(
                     child: Column(
                       children: [
-                        Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text("Placed by: Eugene"),
@@ -55,7 +63,13 @@ class _FridgeListState extends State<FridgeInventoryList> {
                 ),
                 visualDensity: VisualDensity.compact,
                 dense: true,
-                trailing: Icon(Icons.more_vert),
+                trailing: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(Icons.more_vert),
+                  ],
+                ),
               ),
             ),
             Card(
@@ -63,18 +77,26 @@ class _FridgeListState extends State<FridgeInventoryList> {
               child: ListTile(
                 leading: CircleAvatar(
                   radius: 20,
-                  backgroundImage: AssetImage("images/chocolatecake.jpg"),
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                  ),
+                  backgroundImage: AssetImage("assets/images/chocolatecake.jpg"),
                 ),
-                title: Text('Chocolate cake'),
+                title: Column(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text('Chocolate Cake'),
+                      ],
+                    ),
+                  ],
+                ),
                 subtitle: Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 5),
                   child: Container(
                     child: Column(
                       children: [
-                        Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text("Placed by: Anwar"),
@@ -97,7 +119,13 @@ class _FridgeListState extends State<FridgeInventoryList> {
                 ),
                 visualDensity: VisualDensity.compact,
                 dense: true,
-                trailing: Icon(Icons.more_vert),
+                trailing: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(Icons.more_vert),
+                  ],
+                ),
               ),
             ),
             Card(
@@ -105,18 +133,26 @@ class _FridgeListState extends State<FridgeInventoryList> {
               child: ListTile(
                 leading: CircleAvatar(
                   radius: 20,
-                  backgroundImage: AssetImage("images/chocolatecake.jpg"),
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                  ),
+                  backgroundImage: AssetImage("assets/images/chocolatecake.jpg"),
                 ),
-                title: Text('Chocolate cake'),
+                title: Column(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text('Chocolate Cake'),
+                      ],
+                    ),
+                  ],
+                ),
                 subtitle: Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 5),
                   child: Container(
                     child: Column(
                       children: [
-                        Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text("Placed by: Anwar"),
@@ -139,7 +175,13 @@ class _FridgeListState extends State<FridgeInventoryList> {
                 ),
                 visualDensity: VisualDensity.compact,
                 dense: true,
-                trailing: Icon(Icons.more_vert),
+                trailing: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(Icons.more_vert),
+                  ],
+                ),
               ),
             ),
             Card(
@@ -147,71 +189,37 @@ class _FridgeListState extends State<FridgeInventoryList> {
               child: ListTile(
                 leading: CircleAvatar(
                   radius: 20,
-                  backgroundImage: AssetImage("images/chocolatecake.jpg"),
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                  ),
+                  backgroundImage: AssetImage("assets/images/potatochips.jpg"),
                 ),
-                title: Text('Chocolate cake'),
-                subtitle: Padding(
-                  padding: EdgeInsets.only(top: 10),
-                  child: Container(
-                    child: Column(
+                title: Column(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text("Placed by: Anwar"),
-                            SizedBox(width: 10),
-                            Text("Location: Fridge #1516, Blk A3"),
-                            SizedBox(width: 10),
-                            Text(
-                              "Placed On: 15/10/2022",
-                            ),
-                            SizedBox(width: 10),
-                            Text("Date of Expiry: 20/10/2022"),
-                            SizedBox(width: 10),
-                            Text("Item expires in 5 days",
-                                style: TextStyle(color: Colors.red[800]))
-                          ],
-                        ),
+                        Text('Potato Chips'),
                       ],
                     ),
-                  ),
+                  ],
                 ),
-                visualDensity: VisualDensity.compact,
-                dense: true,
-                trailing: Icon(Icons.more_vert),
-              ),
-            ),
-            Card(
-              margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
-              child: ListTile(
-                leading: CircleAvatar(
-                  radius: 20,
-                  backgroundImage: AssetImage("images/potatochips.jpg"),
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                  ),
-                ),
-                title: Text('Potato Chips'),
                 subtitle: Padding(
-                  padding: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 5),
                   child: Container(
                     child: Column(
                       children: [
-                        Row(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text("Placed by: Kevin"),
                             SizedBox(width: 10),
-                            Text("Location: Pantry, C7"),
+                            Text("Location: Pantry C7"),
                             SizedBox(width: 10),
                             Text(
                               "Placed On: 22/10/2022",
                             ),
                             SizedBox(width: 10),
-                            Text("Date of Expiry: 30/10/2023"),
+                            Text("Date of Expiry: 30/10/2022"),
                             SizedBox(width: 10),
                             Text("Item expires in 373 days",
                                 style: TextStyle(color: Colors.red[100]))
@@ -223,7 +231,13 @@ class _FridgeListState extends State<FridgeInventoryList> {
                 ),
                 visualDensity: VisualDensity.compact,
                 dense: true,
-                trailing: Icon(Icons.more_vert),
+                trailing: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(Icons.more_vert),
+                  ],
+                ),
               ),
             ),
           ],
