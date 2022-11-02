@@ -96,7 +96,7 @@ class _SignInState extends State<SignIn> {
                       ElevatedButton(
                           style: signInStyle,
                           child: Text(
-                            'Sign In Anonymously',
+                            'Forgot password?',
                             style: TextStyle(color: Colors.white),
                           ),
                           onPressed: () async {

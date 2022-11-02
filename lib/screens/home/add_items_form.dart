@@ -1,9 +1,12 @@
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ncsnxthck_sust_ghle/shared/constants.dart';
+import 'package:intl/intl.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/services/database.dart';
 
 
 class AddItemsForm extends StatefulWidget {
@@ -18,9 +21,22 @@ class _AddItemsFormState extends State<AddItemsForm> {
   final _formKey = GlobalKey<FormState>();
 
   File? image;
-  String? _nameofProduct;
-  String? _nameofUser;
-  String? _storageLocation;
+  String _nameofProduct = "";
+  String _nameofUser =  "";
+  String _storageLocation = "";
+  DateTime _selectedDateofExpiry = DateTime.now();
+  DateTime _selectedDateofPlacement = DateTime.now();
+
+  final CollectionReference fridgeInventoryList = FirebaseFirestore.instance.collection('fridges');
+
+  Future<void> createFridgeInventoryItem(String nameOfUser, String nameOfProduct, String storageLocation, String dateOfExpiry, String dateOfPlacement, String uid) async {
+    final result = await DatabaseService().addUser(
+      fullName: 'Test',
+      age: '123',
+      email: 'Test2',
+    );
+    print(result);
+  }
 
   Future pickImage(ImageSource source) async {
     try {
@@ -34,18 +50,15 @@ class _AddItemsFormState extends State<AddItemsForm> {
     }
   }
 
-  DateTime selectedDateofExpiry = DateTime.now();
-  DateTime selectedDateofPlacement = DateTime.now();
-
   Future<void> _selectDateofPlacement(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
         context: context,
-        initialDate: selectedDateofPlacement,
+        initialDate: _selectedDateofPlacement,
         firstDate: DateTime(2015, 8),
         lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDateofPlacement) {
+    if (picked != null && picked != _selectedDateofPlacement) {
       setState(() {
-        selectedDateofPlacement = picked;
+        _selectedDateofPlacement = picked;
       });
     }
   }
@@ -53,12 +66,12 @@ class _AddItemsFormState extends State<AddItemsForm> {
   Future<void> _selectDateofExpiry(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
         context: context,
-        initialDate: selectedDateofExpiry,
+        initialDate: _selectedDateofExpiry,
         firstDate: DateTime(2015, 8),
         lastDate: DateTime(2101));
-    if (picked != null && picked != selectedDateofExpiry) {
+    if (picked != null && picked != _selectedDateofExpiry) {
       setState(() {
-        selectedDateofExpiry = picked;
+        _selectedDateofExpiry = picked;
       });
     }
   }
@@ -118,13 +131,12 @@ class _AddItemsFormState extends State<AddItemsForm> {
         ),
         const SizedBox(height: 10.0),
         SizedBox(
-          child:
-        TextFormField(
-          decoration: textInputDecoration.copyWith(hintText: 'Name of item'),
-          validator: (val) =>
-              val!.isEmpty ? 'Please enter the name of this product' : null,
-          onChanged: (val) => setState(() => _nameofProduct = val),
-        ),
+          child: TextFormField(
+            decoration: textInputDecoration.copyWith(hintText: 'Name of item'),
+            validator: (val) =>
+                val!.isEmpty ? 'Please enter the name of this product' : null,
+            onChanged: (val) => setState(() => _nameofProduct = val),
+          ),
         ),
         SizedBox(height: 5),
         // dropdown
@@ -148,14 +160,17 @@ class _AddItemsFormState extends State<AddItemsForm> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-          Container( //apply margin and padding using Container Widget.
-            margin: EdgeInsets.symmetric(vertical: 15),
-          child: Text("Date of placement: "),
-        ),
-              Spacer(),
-              Container( //apply margin and padding using Container Widget.
+              Container(
+                //apply margin and padding using Container Widget.
                 margin: EdgeInsets.symmetric(vertical: 15),
-                child: Text("${selectedDateofPlacement.toLocal()}".split(' ')[0]),
+                child: Text("Date of placement: "),
+              ),
+              Spacer(),
+              Container(
+                //apply margin and padding using Container Widget.
+                margin: EdgeInsets.symmetric(vertical: 15),
+                child:
+                    Text("${_selectedDateofPlacement.toLocal()}".split(' ')[0]),
               ),
               SizedBox(
                 width: 10.0,
@@ -177,14 +192,16 @@ class _AddItemsFormState extends State<AddItemsForm> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Container( //apply margin and padding using Container Widget.
+              Container(
+                //apply margin and padding using Container Widget.
                 margin: EdgeInsets.symmetric(vertical: 15),
                 child: Text("Date of expiry: "),
               ),
               Spacer(),
-              Container( //apply margin and padding using Container Widget.
+              Container(
+                //apply margin and padding using Container Widget.
                 margin: EdgeInsets.symmetric(vertical: 15),
-                child: Text("${selectedDateofExpiry.toLocal()}".split(' ')[0]),
+                child: Text("${_selectedDateofExpiry.toLocal()}".split(' ')[0]),
               ),
               SizedBox(
                 width: 20.0,
@@ -206,10 +223,15 @@ class _AddItemsFormState extends State<AddItemsForm> {
             child: Text('Add',
                 style: TextStyle(
                   color: Colors.white,
-                )
-            ),
+                )),
             onPressed: () async {
               if (_formKey.currentState!.validate()) {
+                final result = await DatabaseService().addUser(
+                  fullName: 'Test',
+                  age: '123',
+                  email: 'Test2',
+                );
+                print("Added" + result.toString());
                 Navigator.pop(context);
               }
             })

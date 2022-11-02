@@ -25,7 +25,6 @@ class DatabaseService {
         .collection(collection)
         .doc("doc_Id")
         .set(data);
-
     // simply add a document in messages sub-collection when needed.
   }
 
@@ -55,5 +54,25 @@ class DatabaseService {
   // get user doc stream
   Stream<UserData> get userData {
     return brewCollection.doc(uid).snapshots().map(_userDataFromSnapshot);
+  }
+
+  Future addUser(collection, docid, data) async {
+    await FirebaseFirestore.instance
+        .collection(collection)
+        .doc("doc_Id")
+        .set(data);
+    // simply add a document in messages sub-collection when needed.
+  }
+
+  Future<String?> getUser(String email) async {
+    try {
+      CollectionReference users =
+      FirebaseFirestore.instance.collection('users');
+      final snapshot = await users.doc(email).get();
+      final data = snapshot.data() as Map<String, dynamic>;
+      return data['full_name'];
+    } catch (e) {
+      return 'Error fetching user';
+    }
   }
 }

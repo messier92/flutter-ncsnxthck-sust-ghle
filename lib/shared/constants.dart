@@ -19,3 +19,8 @@ final ButtonStyle takeSurveyStyle = ElevatedButton.styleFrom(
 
 final ButtonStyle qrLinkStyle = ElevatedButton.styleFrom(
     textStyle: const TextStyle(fontSize: 10, color: Colors.white));
+
+final ButtonStyle donatedStyle = ElevatedButton.styleFrom(
+    textStyle: const TextStyle(fontSize: 10, color: Colors.white), backgroundColor: Colors.green);
+
+final TextStyle reminderStyle = TextStyle(fontSize: 10, color: Colors.red[800]);

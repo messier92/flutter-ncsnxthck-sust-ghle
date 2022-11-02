@@ -1,7 +1,7 @@
 List<Map<String, dynamic>> snackList = [
   {
     'image': 'casavachips.jpg',
-    'product': 'Casava Chips (10 packs)',
+    'product': 'Casava Chips (1000g)',
     'supplier': 'Gold Snack Trading',
     'price': 25,
     'discounted': true

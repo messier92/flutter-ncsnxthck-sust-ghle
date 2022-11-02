@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:flutter_ncsnxthck_sust_ghle/models/brew.dart';
+import 'package:flutter_ncsnxthck_sust_ghle/shared/constants.dart';
+import 'package:gap/gap.dart';
 
 class FridgeInventoryList extends StatefulWidget {
   const FridgeInventoryList({super.key});
@@ -20,7 +20,7 @@ class _FridgeListState extends State<FridgeInventoryList> {
               margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
               child: ListTile(
                 leading: CircleAvatar(
-                  radius: 20,
+                  radius: 30,
                   backgroundImage: AssetImage("assets/images/bananas.jpg"),
                 ),
                 title: Column(
@@ -53,8 +53,13 @@ class _FridgeListState extends State<FridgeInventoryList> {
                             SizedBox(width: 10),
                             Text("Date of Expiry: 22/10/2022"),
                             SizedBox(width: 10),
-                            Text("Item expires in 9 days",
-                                style: TextStyle(color: Colors.red[500]))
+                            Row(
+                              children: [
+                                Text("Item expires in 9 days",
+                                    style: reminderStyle.copyWith(color: Colors.red[500])),
+                                Icon(Icons.doorbell, size: 15),
+                              ],
+                            ),
                           ],
                         ),
                       ],
@@ -64,19 +69,32 @@ class _FridgeListState extends State<FridgeInventoryList> {
                 visualDensity: VisualDensity.compact,
                 dense: true,
                 trailing: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Icon(Icons.more_vert),
+                    SizedBox(
+                      width: 75,
+                      height: 18,
+                      child: ElevatedButton(child: Text('Donate'), style: qrLinkStyle,
+                          onPressed: () async {}),
+                    ),
+                    Gap(2),
+                    SizedBox(
+                      width: 75,
+                      height: 18,
+                      child: ElevatedButton(child: Text('Remove'), style: qrLinkStyle,
+                          onPressed: () async {}),
+                    )
                   ],
                 ),
               ),
             ),
             Card(
+              color: Colors.red[100],
               margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
               child: ListTile(
                 leading: CircleAvatar(
-                  radius: 20,
+                  radius: 30,
                   backgroundImage: AssetImage("assets/images/chocolatecake.jpg"),
                 ),
                 title: Column(
@@ -109,8 +127,13 @@ class _FridgeListState extends State<FridgeInventoryList> {
                             SizedBox(width: 10),
                             Text("Date of Expiry: 20/10/2022"),
                             SizedBox(width: 10),
-                            Text("Item expires in 5 days",
-                                style: TextStyle(color: Colors.red[800]))
+                            Row(
+                              children: [
+                                Text("Item expires in 5 days",
+                                    style: TextStyle(color: Colors.red[800], fontSize: 10)),
+                                Icon(Icons.doorbell, size: 15),
+                              ],
+                            ),
                           ],
                         ),
                       ],
@@ -120,10 +143,22 @@ class _FridgeListState extends State<FridgeInventoryList> {
                 visualDensity: VisualDensity.compact,
                 dense: true,
                 trailing: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Icon(Icons.more_vert),
+                    SizedBox(
+                      width: 75,
+                      height: 18,
+                      child: ElevatedButton(child: Text('Donated'), style: donatedStyle,
+                          onPressed: () async {}),
+                    ),
+                    Gap(2),
+                    SizedBox(
+                      width: 75,
+                      height: 18,
+                      child: ElevatedButton(child: Text('Remove'), style: qrLinkStyle,
+                          onPressed: () async {}),
+                    ),
                   ],
                 ),
               ),
@@ -132,7 +167,7 @@ class _FridgeListState extends State<FridgeInventoryList> {
               margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
               child: ListTile(
                 leading: CircleAvatar(
-                  radius: 20,
+                  radius: 30,
                   backgroundImage: AssetImage("assets/images/chocolatecake.jpg"),
                 ),
                 title: Column(
@@ -165,8 +200,13 @@ class _FridgeListState extends State<FridgeInventoryList> {
                             SizedBox(width: 10),
                             Text("Date of Expiry: 20/10/2022"),
                             SizedBox(width: 10),
-                            Text("Item expires in 5 days",
-                                style: TextStyle(color: Colors.red[800]))
+                            Row(
+                              children: [
+                                Text("Item expires in 5 days",
+                                    style: TextStyle(color: Colors.red[800], fontSize: 10)),
+                                Icon(Icons.doorbell, size: 15),
+                              ],
+                            ),
                           ],
                         ),
                       ],
@@ -176,19 +216,32 @@ class _FridgeListState extends State<FridgeInventoryList> {
                 visualDensity: VisualDensity.compact,
                 dense: true,
                 trailing: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Icon(Icons.more_vert),
+                    SizedBox(
+                      width: 75,
+                      height: 18,
+                      child: ElevatedButton(child: Text('Donate'), style: qrLinkStyle,
+                          onPressed: () async {}),
+                    ),
+                    Gap(2),
+                    SizedBox(
+                      width: 75,
+                      height: 18,
+                      child: ElevatedButton(child: Text('Remove'), style: qrLinkStyle,
+                          onPressed: () async {}),
+                    )
                   ],
                 ),
               ),
             ),
+
             Card(
               margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
               child: ListTile(
                 leading: CircleAvatar(
-                  radius: 20,
+                  radius: 30,
                   backgroundImage: AssetImage("assets/images/potatochips.jpg"),
                 ),
                 title: Column(
@@ -222,7 +275,7 @@ class _FridgeListState extends State<FridgeInventoryList> {
                             Text("Date of Expiry: 30/10/2022"),
                             SizedBox(width: 10),
                             Text("Item expires in 373 days",
-                                style: TextStyle(color: Colors.red[100]))
+                                style: reminderStyle.copyWith(color: Colors.red[100]))
                           ],
                         ),
                       ],
@@ -232,10 +285,22 @@ class _FridgeListState extends State<FridgeInventoryList> {
                 visualDensity: VisualDensity.compact,
                 dense: true,
                 trailing: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Icon(Icons.more_vert),
+                    SizedBox(
+                      width: 75,
+                      height: 18,
+                      child: ElevatedButton(child: Text('Donate'), style: qrLinkStyle,
+                          onPressed: () async {}),
+                    ),
+                    Gap(2),
+                    SizedBox(
+                      width: 75,
+                      height: 18,
+                      child: ElevatedButton(child: Text('Remove'), style: qrLinkStyle,
+                          onPressed: () async {}),
+                    )
                   ],
                 ),
               ),
